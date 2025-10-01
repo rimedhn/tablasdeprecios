@@ -15,22 +15,22 @@ const dataSucursales = [
 
 const dataUsuarios = [
     { users: 3, mens: 1250.00, anual: 12500.00, imp: 6990.00, suc: 1 },
-    { users: 4, mens: 1550.00, anual: 15500.00, imp: 6990.00, suc: 1 },
-    { users: 5, mens: 1850.00, anual: 18500.00, imp: 6990.00, suc: 1 },
-    { users: 6, mens: 2150.00, anual: 21500.00, imp: 6990.00, suc: 1 },
-    { users: 7, mens: 2450.00, anual: 24500.00, imp: 6990.00, suc: 1 },
-    { users: 8, mens: 2750.00, anual: 27500.00, imp: 6990.00, suc: 1 },
-    { users: 9, mens: 3050.00, anual: 30500.00, imp: 6990.00, suc: 1 },
-    { users: 10, mens: 3350.00, anual: 33500.00, imp: 6990.00, suc: 1 },
-    { users: 11, mens: 3650.00, anual: 36500.00, imp: 6990.00, suc: 1 },
-    { users: 12, mens: 3950.00, anual: 39500.00, imp: 6990.00, suc: 1 }
+    { users: 4, mens: 1600.00, anual: 16000.00, imp: 6990.00, suc: 1 },
+    { users: 5, mens: 1950.00, anual: 19500.00, imp: 6990.00, suc: 1 },
+    { users: 6, mens: 2300.00, anual: 23000.00, imp: 6990.00, suc: 1 },
+    { users: 7, mens: 2650.00, anual: 26500.00, imp: 6990.00, suc: 1 },
+    { users: 8, mens: 3000.00, anual: 30000.00, imp: 6990.00, suc: 1 },
+    { users: 9, mens: 3350.00, anual: 33500.00, imp: 6990.00, suc: 1 },
+    { users: 10, mens: 3700.00, anual: 37000.00, imp: 6990.00, suc: 1 },
+    { users: 11, mens: 4050.00, anual: 40500.00, imp: 6990.00, suc: 1 },
+    { users: 12, mens: 4400.00, anual: 44500.00, imp: 6990.00, suc: 1 }
 ];
 
 // --- Configuración y Tasas de Conversión (Base: HNL Lempira) ---
 const EXCHANGE_RATES = {
     HNL: { rate: 1, symbol: 'L ', locale: 'es-HN' },
-    USD: { rate: 1 / 24.80, symbol: '$ ', locale: 'en-US' }, // 1 USD ≈ 24.80 HNL
-    GTQ: { rate: 1 / 3.19, symbol: 'Q ', locale: 'es-GT' }    // 1 GTQ ≈ 3.19 HNL
+    USD: { rate: 1 / 26.15, symbol: '$ ', locale: 'en-US' }, // 1 USD ≈ 26.15 HNL
+    GTQ: { rate: 1 / 7.60, symbol: 'Q ', locale: 'es-GT' }    // 1 GTQ ≈ 7.60 HNL
 };
 
 const PRICE_PER_ADDITIONAL_USER_MONTHLY_HNL = 350.00; 
