@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM POS - Plataformas digitales a tu medida</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="icon" type="image/jpg" href="https://github.com/rimedhn/rmpos/blob/main/LOGO%20RMPOS.jpg?raw=true">
+</head>
+<body>
+
+    <header class="hero">
+        <img src="https://github.com/rimedhn/rmpos/blob/main/LOGO%20RMPOS.jpg?raw=true" alt="Logo RM POS" class="logo">
+        <h1>RM POS: Plataformas digitales a tu medida</h1>
+        <p>Encuentra el plan perfecto que se ajusta a tu crecimiento y presupuesto.</p>
+    </header>
+
+    <main class="pricing-container">
+        
+        <section class="interactive-pricing">
+            <h2>Calcula tu Precio Ideal</h2>
+            
+            <div class="toggle-container">
+                <button id="toggle-sucursal" class="active"><i class="fas fa-store"></i> Por Sucursal</button>
+                <button id="toggle-usuario"><i class="fas fa-user-tag"></i> Por Usuario</button>
+            </div>
+
+            <div class="range-selector">
+                <label for="quantity-range" id="range-label">Sucursales (1):</label>
+                <input type="range" id="quantity-range" min="1" max="10" value="1">
+                <span id="range-value">1</span>
+            </div>
+        </section>
+
+        <section class="billing-toggle">
+            <span class="label">Pagar Mensual</span>
+            <label class="switch">
+                <input type="checkbox" id="billing-switch">
+                <span class="slider round"></span>
+            </label>
+            <span class="label highlight">Pagar Anual (<strong id="annual-saving">Ahorra 2 Meses</strong>)</span>
+        </section>
+
+        <section class="price-card-section">
+            <div class="price-card popular" id="dynamic-plan">
+                <i class="fas fa-star icon"></i>
+                <h3 id="plan-name">Plan Básico (1 Sucursal)</h3>
+                
+                <p class="base-price"><span id="price-mensual">L 1,250.00</span> / mes</p>
+                <p class="base-price annual-price-display" style="display: none;"><span id="price-anual">L 12,500.00</span> / año</p>
+                
+                <hr>
+
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Licencia para <strong id="plan-quantity-display">1 Sucursal</strong></li>
+                    <li><i class="fas fa-users"></i> Incluye hasta <strong id="user-quantity-display">3 Usuarios</strong></li>
+                    <li><i class="fas fa-cogs"></i> Implementación Inicial: <strong id="price-implementacion">L 6,990.00</strong></li>
+                    <li class="commission-info"><i class="fas fa-percent"></i> Comisión por Implementación: **40%**</li>
+                    <li class="commission-info"><i class="fas fa-percent"></i> Comisión Mensual: **20%**</li>
+                </ul>
+
+                <a href="mailto:rmpos.hn@gmail.com" class="cta-button">Elegir Plan</a>
+            </div>
+        </section>
+        
+        <section class="full-tables-section">
+            <button class="expand-btn" onclick="toggleTables()">
+                <i class="fas fa-table"></i> Ver Tablas de Precios Completas (Detalle)
+            </button>
+            
+            <div id="full-tables-content" class="collapsed">
+                
+                <h3>Tabla Completa - Precios por Sucursal</h3>
+                <table id="sucursal-table"></table>
+
+                <h3>Tabla Completa - Precios por Usuario</h3>
+                <table id="usuario-table"></table>
+            </div>
+        </section>
+
+        <section class="contact-details">
+            <p>¿Necesitas un plan personalizado? Contáctanos:</p>
+            <p><i class="fas fa-phone"></i> **Teléfono:** 9359-3126</p>
+            <p><i class="fas fa-envelope"></i> **Correo:** rmpos.hn@gmail.com</p>
+        </section>
+    </main>
+    
+    <a href="https://wa.me/50493593126" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
