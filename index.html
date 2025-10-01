@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes y Precios - Atractivos</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Nuestros Planes y Precios</h1>
+        <p>Encuentra el plan perfecto que se ajusta a tu crecimiento y presupuesto.</p>
+    </header>
+
+    <main class="pricing-container">
+        
+        <section class="interactive-pricing">
+            <h2>Calcula tu Precio</h2>
+            <div class="toggle-container">
+                <button id="toggle-sucursal" class="active">Por Sucursal</button>
+                <button id="toggle-usuario">Por Usuario</button>
+            </div>
+
+            <div class="range-selector">
+                <label for="quantity-range" id="range-label">Sucursales (1):</label>
+                <input type="range" id="quantity-range" min="1" max="12" value="1">
+                <span id="range-value">1</span>
+            </div>
+        </section>
+
+        <section class="billing-toggle">
+            <span class="label">Pagar Mensual</span>
+            <label class="switch">
+                <input type="checkbox" id="billing-switch">
+                <span class="slider round"></span>
+            </label>
+            <span class="label highlight">Pagar Anual (¡Ahorra un 10%!)</span>
+        </section>
+
+        <section class="price-card-section">
+            <div class="price-card popular" id="dynamic-plan">
+                <i class="fas fa-building icon"></i>
+                <h3 id="plan-name">Plan Básico (Sucursales)</h3>
+                
+                <p class="base-price"><span id="price-mensual">L 1,250.00</span> / mes</p>
+                <p class="base-price annual-price-display" style="display: none;"><span id="price-anual">L 12,500.00</span> / año</p>
+                
+                <hr>
+
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Licencia para <strong id="plan-quantity-display">1 Sucursal</strong></li>
+                    <li><i class="fas fa-percent"></i> Comisión de **40%** (Implementación)</li>
+                    <li><i class="fas fa-percent"></i> Comisión de **20%** (Mensual)</li>
+                    <li><i class="fas fa-users"></i> Incluye hasta **3 Usuarios**</li>
+                    <li><i class="fas fa-cogs"></i> Implementación Inicial: <strong id="price-implementacion">L 6,990.00</strong></li>
+                </ul>
+
+                <a href="#contacto" class="cta-button">Elegir Plan</a>
+            </div>
+        </section>
+
+        <section class="commission-details">
+            <p>**Nota sobre Comisiones:** La tarifa de Implementación y Mensual incluyen las comisiones estándar. Para más detalles, por favor, contacte a ventas.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
