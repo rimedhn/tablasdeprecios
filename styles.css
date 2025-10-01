@@ -1,0 +1,375 @@
+/* Colores Principales */
+:root {
+    --primary-color: #6A1B9A; /* Morado Oscuro */
+    --accent-color: #FF9800; /* Naranja Brillante */
+    --light-bg: #f4f7f9;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Base y Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Encabezado (Hero) */
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+.hero h1 {
+    margin: 10px 0;
+    font-size: 2.5em;
+}
+.hero p {
+    font-size: 1.1em;
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.pricing-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+/* Selector Interactivo (Tipo de Plan) */
+.interactive-pricing {
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* Estilo del Selector de Moneda */
+.currency-selector {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+}
+.currency-selector label {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+#currency-select {
+    padding: 8px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+
+.toggle-container button {
+    padding: 10px 25px;
+    margin: 5px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+.toggle-container button.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Selector de Rango (Slider) */
+.range-selector {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.additional-users-selector {
+    margin-top: 20px;
+    background-color: #fff3e0; /* Fondo más claro para destacar el adicional */
+    border: 1px dashed var(--accent-color);
+}
+#quantity-range, #additional-users-range {
+    width: 60%;
+    min-width: 200px;
+    cursor: pointer;
+}
+#range-value, #additional-users-value {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+/* Alternador de Facturación (Toggle Switch) */
+.billing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    font-weight: 500;
+    flex-wrap: wrap;
+}
+.billing-toggle .highlight {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+/* El switch en sí */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Tarjeta de Precio (Dynamic Card) */
+.price-card-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.price-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+.price-card.popular {
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 40px rgba(255, 152, 0, 0.3);
+    transform: scale(1.05);
+}
+.icon {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+.price-card h3 {
+    font-size: 1.8em;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+.base-price {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.base-price span {
+    color: var(--accent-color);
+}
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+.features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.features li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+    color: #555;
+    font-size: 1.05em;
+}
+.features li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* Botón de llamada a la acción removido */
+
+/* Tablas Completas Colapsables */
+.full-tables-section {
+    margin-top: 50px;
+    text-align: center;
+}
+.expand-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+.expand-btn:hover {
+    background-color: #4a148c;
+}
+
+#full-tables-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+    text-align: left;
+}
+#full-tables-content.expanded {
+    max-height: 2000px;
+    padding-top: 20px;
+}
+
+.full-tables-section h3 {
+    color: var(--primary-color);
+    margin-top: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Detalles de Contacto */
+.contact-details {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 50px;
+    box-shadow: var(--card-shadow);
+}
+.contact-details i {
+    color: var(--accent-color);
+    margin-right: 8px;
+}
+
+/* BOTÓN FLOTANTE DE WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Responsividad (Móviles) */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.8em;
+    }
+    .toggle-container button {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .billing-toggle, .range-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #quantity-range, #additional-users-range {
+        width: 80%;
+    }
+    .price-card.popular {
+        transform: scale(1);
+    }
+    .whatsapp-float {
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+    .currency-selector {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #currency-select {
+        width: 100%;
+    }
+}
