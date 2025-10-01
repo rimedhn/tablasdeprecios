@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM POS - Plataformas digitales a tu medida</title>
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Favicon y Logo -->
+    <link rel="icon" type="image/jpg" href="https://github.com/rimedhn/rmpos/blob/main/LOGO%20RMPOS.jpg?raw=true">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <img src="https://github.com/rimedhn/rmpos/blob/main/LOGO%20RMPOS.jpg?raw=true" alt="Logo RM POS" class="logo">
+        <h1>RM POS: Plataformas digitales a tu medida</h1>
+        <p>Encuentra el plan perfecto que se ajusta a tu crecimiento y presupuesto.</p>
+    </header>
+
+    <main class="pricing-container">
+        
+        <!-- SECCIÓN INTERACTIVA DE PRECIOS -->
+        <section class="interactive-pricing">
+            <h2>Calcula tu Precio Ideal</h2>
+            
+            <!-- Selector de Moneda -->
+            <div class="currency-selector">
+                <label for="currency-select"><i class="fas fa-money-bill-wave"></i> Selecciona tu Moneda:</label>
+                <select id="currency-select">
+                    <option value="HNL" selected>Lempira (HNL)</option>
+                    <option value="USD">Dólar Americano (USD)</option>
+                    <option value="GTQ">Quetzal Guatemalteco (GTQ)</option>
+                </select>
+            </div>
+            
+            <div class="toggle-container">
+                <button id="toggle-sucursal" class="active"><i class="fas fa-store"></i> Por Sucursal</button>
+                <button id="toggle-usuario"><i class="fas fa-user-tag"></i> Por Usuario</button>
+            </div>
+
+            <!-- Selector de Cantidad (Rango) - Sucursales/Usuarios Base -->
+            <div class="range-selector">
+                <label for="quantity-range" id="range-label">Sucursales (1):</label>
+                <input type="range" id="quantity-range" min="1" max="10" value="1">
+                <span id="range-value">1</span>
+            </div>
+
+            <!-- Selector de Usuarios Adicionales (Visible solo en modo Sucursal) -->
+            <div class="range-selector additional-users-selector" id="additional-users-group" style="display: none;">
+                <label for="additional-users-range" id="additional-users-label">Usuarios Adicionales (0):</label>
+                <input type="range" id="additional-users-range" min="0" max="20" value="0">
+                <span id="additional-users-value">0</span>
+            </div>
+
+        </section>
+
+        <!-- ALTERNADOR DE FACTURACIÓN -->
+        <section class="billing-toggle">
+            <span class="label">Pagar Mensual</span>
+            <label class="switch">
+                <input type="checkbox" id="billing-switch">
+                <span class="slider round"></span>
+            </label>
+            <span class="label highlight">Pagar Anual (<strong id="annual-saving">Ahorra 2 Meses</strong>)</span>
+        </section>
+
+        <!-- TARJETA DE PRECIO DINÁMICA -->
+        <section class="price-card-section">
+            <div class="price-card popular" id="dynamic-plan">
+                <i class="fas fa-star icon"></i>
+                <h3 id="plan-name">Plan Básico (1 Sucursal)</h3>
+                
+                <p class="base-price"><span id="price-mensual">L 1,250.00</span> / mes</p>
+                <p class="base-price annual-price-display" style="display: none;"><span id="price-anual">L 12,500.00</span> / año</p>
+                
+                <hr>
+
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Licencia para <strong id="plan-quantity-display">1 Sucursal</strong></li>
+                    <li><i class="fas fa-users"></i> Cantidad de Usuarios: <strong id="user-quantity-display">3 Base</strong></li>
+                    <li><i class="fas fa-cogs"></i> Implementación Inicial: <strong id="price-implementacion">L 6,990.00</strong></li>
+                    <li class="commission-info"><i class="fas fa-percent"></i> Comisión por Implementación: **40%**</li>
+                    <li class="commission-info"><i class="fas fa-percent"></i> Comisión Mensual: **20%**</li>
+                </ul>
+
+                <!-- Botón "Elegir Plan" ha sido removido según solicitud -->
+            </div>
+        </section>
+        
+        <!-- SECCIÓN DE TABLAS COMPLETAS COLAPSABLES -->
+        <section class="full-tables-section">
+            <button class="expand-btn" onclick="toggleTables()">
+                <i class="fas fa-table"></i> Ver Tablas de Precios Completas (Detalle)
+            </button>
+            
+            <div id="full-tables-content" class="collapsed">
+                
+                <!-- TABLA DE SUCURSALES -->
+                <h3>Tabla Completa - Precios por Sucursal</h3>
+                <table id="sucursal-table"></table>
+
+                <!-- TABLA DE USUARIOS -->
+                <h3>Tabla Completa - Precios por Usuario</h3>
+                <table id="usuario-table"></table>
+            </div>
+        </section>
+
+        <section class="contact-details">
+            <p>¿Necesitas un plan personalizado o tienes dudas? Contáctanos:</p>
+            <p><i class="fas fa-phone"></i> **Teléfono:** 9359-3126</p>
+            <p><i class="fas fa-envelope"></i> **Correo:** rmpos.hn@gmail.com</p>
+        </section>
+    </main>
+    
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/50493593126" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
